@@ -74,14 +74,14 @@ once Anaconda installed on you system, open a Terminal:
 6) in anaconda-navigator, start a Terminal with your 'cudaenv' and enter 'pip install pycuda'
 7) install scikit-cuda with 'pip install scikit-cuda'
 # Introduction
-To write a pattern on a sample coated with a electron sensitive resist, the focused electron beam (ebeam)  (i.e. produced by a Scanning Electron Microscope (SEM)) impingles 'dot by dot' on the surface of the sample. The interaction physic is complex, at the impingled point the resist absorpbs a quantity of energy given by a Point Spread function (PSF). If two dots are close enough each other then the resulting ebeam exposure will be a line or even a surface, that leads to an unattended pattern.
+To write a pattern on a sample coated with a electron sensitive resist, the focused electron beam (ebeam)  (i.e. produced by a Scanning Electron Microscope (SEM)) impingles 'dot by dot' on the surface of the sample. The interaction physic is complex, at the impingled point and around it the resist absorpbs a quantity of energy given by a Point Spread function (PSF). The extend area of this absoption depend on the electron range given by the interaction of the beam and the sample. If two dots are close enough each other then the resulting ebeam exposure will be a line or even a surface, that could lead to an unattended pattern.
 
 If you want you expose a simple surface it will be fine but if you want for instance expose two surfaces with a very small gap in between it could be a problem.
 
 This simulation can help you to determine the good dose (the dwelltime of the ebeam at each dot) for your desired pattern. You can visualize the result in 2D with matplotlib or 3D with openGL.
 
-Thanks to the free Casino3 software you can obtain the PSF with the depth of your resist, with any ebeam parameters and any sample and resist. Of course you have to know the parameters of your instrument (semi-angle of the SEM, speed of the electronique module, the physical proprieties of your sample, etc.)
+Thanks to the free Casino3 software you can obtain the PSF with the depth of your resist, with any ebeam parameters and any sample and resist. Of course you have to know the parameters of your instrument (the semi-angle of the SEM, the speed of the electronique module, the physical proprieties of your sample, etc.)
 
-Once you get the PSF, this python notebook will do the rest.
+Once you get the PSF, this python notebook will help you to do the rest.
 
-You can explore more possibilies: you can mixte two exposures : one at low 5 kV for fast writing a large surface and one at high kV for fine structures. Or you can develop your own algo... and maybe share.
+You can explore more possibilies: you can mixte two exposures (one at low 5 kV for fast writing a large surface and one at high kV for fine structures). Or you can develop your own algo... and maybe share.
