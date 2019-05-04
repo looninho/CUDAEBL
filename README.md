@@ -18,37 +18,41 @@ The CUDA toolkit file is packed with a display driver.
 Installation on Windows 10 is straight forward. In Ubuntu you may to blacklist the default 'nouveau' driver:
 #### Ubuntu 18.04
 Hereafter are instructions for a fresh Ubuntu install and cudatoolkit version 10.1. Open a Terminal (ctrl+alt+t)
-##### 1) blacklist 'nouveau' driver:
-###### 1-a) create file in ~/ folder:
+##### 1) update your Ubuntu and install build-essential:
+ - sudo pat update
+ - sudo apt upgrade
+ - sudo apt install build-essential
+##### 2) blacklist 'nouveau' driver:
+###### 2-a) create file in ~/ folder:
  - cd ~/
  - gedit blacklist-nouveau.conf
-##### 1-b) add these two lines and save:
+##### 2-b) add these two lines and save:
  - blacklist nouveau
  - options nouveau modeset=0
-#### 2) remove all previous cuda:
+#### 3) remove all previous cuda:
  - sudo apt-get purge nvidia-cuda*
-#### 3) logout GUI interface:
+#### 4) logout GUI interface:
  - sudo telinit 3
  - press ctrl+alt+F1 and enter your username and pwd
-#### 4) go into super user mode and copy the file you created:
+#### 5) go into super user mode and copy the file you created:
  - sudo -i
  - sudo cp /home/<yourusername>/blacklist-nouveau.conf /etc/modprobe.d
   
-#### 5) run:
+#### 6) run:
  - update-initramfs -u
  - exit
  - sudo reboot
-#### 6) open a Terminal and cd to the folder where the CUDA toolkit is saved and run:
+#### 7) open a Terminal and cd to the folder where the CUDA toolkit is saved and run:
  - sudo sh cuda_10.1.105_418.39_linux.run
  - then follow instructions (check that the driver installation option is ticked)
  - you can take a coffee...
-#### 7) test your installation:
-##### 7-1) add cuda PATH:
+#### 8) test your installation:
+##### 8-1) add cuda PATH:
  - export PATH=/usr/local/cuda-10.1/bin${PATH:+:${PATH}}
-##### 7-2) run:
+##### 8-2) run:
  - nvcc -V
  - if you get no error that means your cudatoolkit installation is fine.
-#### 8) now reboot Ubuntu and add cuda PATH to your system path. In a Terminal:
+#### 9) now reboot Ubuntu and add cuda PATH to your system path. In a Terminal:
  - sudo gedit ~/.bashrc
  - add the two following lines to the end of the file:
    - export PATH=/usr/local/cuda-10.1/bin${PATH:+:${PATH}}
