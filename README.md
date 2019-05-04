@@ -19,7 +19,7 @@ Installation on Windows 10 is straight forward. In Ubuntu you may to blacklist t
 #### Ubuntu 18.04
 Hereafter are instructions for a fresh Ubuntu install and cudatoolkit version 10.1. Open a Terminal (ctrl+alt+t)
 ##### 1) update your Ubuntu and install build-essential:
- - sudo pat update
+ - sudo apt update
  - sudo apt upgrade
  - sudo apt install build-essential
 ##### 2) blacklist 'nouveau' driver:
