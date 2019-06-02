@@ -2,13 +2,16 @@
 Simulation for eBeam Lithography using Casino3, Python, CUDA and FFT.
 The method used for this example purpose uses FFT convolution for exposing pattern and FFT deconvolution to find the dose distribution.
 The example given was performed at 30 kV on a SEM Zeiss Supra 40 equiped with the Raith Elphy Plus electronic pattern generator module.
-The simulation with the Point Spread Function (PSF) from Casino3 is compared to the experimental result.
+The Point Spread Function (PSF) is simulated by free Casino3 software.
 # Requirement:
+- Some basic knowledges of python language and jupyter notebook
 - Windows 10 64 bits or Linux 64 bits
 - 4 Go CPU-RAM (8 recommanded but the more the better)
 - A NVIDIA graphic card with at least 2 Go GPU-RAM (the more the better) and cuda capable, check your GPU CUDA-capable here: https://developer.nvidia.com/cuda-gpus
+
+If you have only an old computer and wanna up to 16 Tesla V100 GPU for some bucks you can use Amazon Web Services (aws). The instructions for launching an aws AMI are given in the aws folder.
 ## Installation
-This work was tested on Windows 10 and Ubuntu 18.04, on linux system you can get more GPU RAM available than on Windows system (95 % instead of 81%).
+This work was tested on Windows 10, Ubuntu 18.04 on local and on aws EC2 p3.2xlarge. On linux system you can get more GPU RAM available than on Windows system (95 % instead of 81%).
 ### Casino3
 There are many way to obtain the PSF but the easiest way is using Monte Carlo simulation. You can get the PSF from the free software CASINO3 here:http://www.gel.usherbrooke.ca/casino/
 Unfortunatley Casino3 is a windows software but you can use Wine in Ubuntu to execute it.
