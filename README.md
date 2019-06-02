@@ -1,8 +1,10 @@
 # CUDAEBL
 Simulation for eBeam Lithography using Casino3, Python, CUDA and FFT.
 The method used for this example purpose uses FFT convolution for exposing pattern and FFT deconvolution to find the dose distribution.
+
 The experimental was performed at 30 kV on a SEM Zeiss Supra 40 equiped with the Raith Elphy Plus electronic pattern generator module.
-The simulation use the Point Spread Function (PSF) simulated by free Casino3 software.
+
+The simulation uses the Point Spread Function (PSF) simulated by free Casino3 software.
 # Requirement:
 - Some basic knowledges of python language and jupyter notebook
 - Windows 10 64 bits or Linux 64 bits
