@@ -7,7 +7,7 @@ The experimental was performed at 30 kV on a SEM Zeiss Supra 40 equiped with the
 The simulation uses the Point Spread Function (PSF) simulated by free Casino3 software.
 
 # Introduction
-To write a pattern on a sample coated with a electron sensitive resist, the focused electron beam (ebeam)  (i.e. produced by a Scanning Electron Microscope (SEM)) impingles 'dot by dot' on the surface of the sample. The interaction physic is complex, at the impingled point and around it the resist absorbs a quantity of energy given by a Point Spread function (PSF). The extend area of this absoption depend on the electron range given by the interaction of the beam and the sample. If two dots are close enough each other then the resulting ebeam exposure will be a line or even a surface, that could lead to an unattended pattern.
+To write a pattern on a sample coated with a electron sensitive resist, the focused electron beam (ebeam)  (i.e. produced by a Scanning Electron Microscope (SEM)) impingles 'dot by dot' on the surface of the sample. The interaction physic is complex, at the impingled point and around it the resist absorbs a quantity of energy given by a Point Spread function (PSF). The extend area of this absoption depends on the electron range given by the interaction of the beam and the sample. If two dots are close enough each other then the resulting ebeam exposure will be a line or even a surface, that could lead to an unattended pattern.
 
 If you want you expose a simple surface it will be fine but if you want for instance expose two surfaces with a very small gap in between it could be a problem.
 
@@ -17,7 +17,7 @@ Thanks to the free Casino3 software you can obtain the PSF with the depth of you
 
 Once you get the PSF, this python notebook will help you to do the rest.
 
-You can explore more possibilies: you can mixte two exposures (one at low 5 kV for fast writing a large surface and one at high kV for fine structures). Or you can develop your own algo... and maybe share.
+You can explore more possibilities: you can mixte two exposures (one at low 5 kV for fast writing a large surface and one at high kV for fine structures). Or you can develop your own algo... and maybe share.
 
 # Requirement:
 - Some basic knowledges of python language and jupyter notebook
@@ -35,7 +35,7 @@ Unfortunatley Casino3 is a windows software but you can use Wine in Ubuntu to ex
 Download and install CUDA toolkit for your system here: https://developer.nvidia.com/cuda-downloads
 The CUDA toolkit file is packed with a display driver.
 Installation on Windows 10 is straight forward. In Ubuntu you may to blacklist the default 'nouveau' driver:
-### Ubuntu 18.04
+### On Ubuntu 18.04
 Hereafter are instructions for a fresh Ubuntu install and cudatoolkit version 10.1. Open a Terminal (ctrl+alt+t)
 #### 1) update your Ubuntu and install build-essential:
  - sudo apt update
