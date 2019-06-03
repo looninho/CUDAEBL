@@ -7,7 +7,7 @@ The experimental was performed at 30 kV on a SEM Zeiss Supra 40 equiped with the
 The simulation uses the Point Spread Function (PSF) simulated by free Casino3 software.
 
 # Introduction
-To write a pattern on a sample coated with a electron sensitive resist, the focused electron beam (ebeam)  (i.e. produced by a Scanning Electron Microscope (SEM)) impingles 'dot by dot' on the surface of the sample. The interaction physic is complex, at the impingled point and around it the resist absorpbs a quantity of energy given by a Point Spread function (PSF). The extend area of this absoption depend on the electron range given by the interaction of the beam and the sample. If two dots are close enough each other then the resulting ebeam exposure will be a line or even a surface, that could lead to an unattended pattern.
+To write a pattern on a sample coated with a electron sensitive resist, the focused electron beam (ebeam)  (i.e. produced by a Scanning Electron Microscope (SEM)) impingles 'dot by dot' on the surface of the sample. The interaction physic is complex, at the impingled point and around it the resist absorbs a quantity of energy given by a Point Spread function (PSF). The extend area of this absoption depend on the electron range given by the interaction of the beam and the sample. If two dots are close enough each other then the resulting ebeam exposure will be a line or even a surface, that could lead to an unattended pattern.
 
 If you want you expose a simple surface it will be fine but if you want for instance expose two surfaces with a very small gap in between it could be a problem.
 
