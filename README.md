@@ -5,6 +5,20 @@ The method used for this example purpose uses FFT convolution for exposing patte
 The experimental was performed at 30 kV on a SEM Zeiss Supra 40 equiped with the Raith Elphy Plus electronic pattern generator module.
 
 The simulation uses the Point Spread Function (PSF) simulated by free Casino3 software.
+
+# Introduction
+To write a pattern on a sample coated with a electron sensitive resist, the focused electron beam (ebeam)  (i.e. produced by a Scanning Electron Microscope (SEM)) impingles 'dot by dot' on the surface of the sample. The interaction physic is complex, at the impingled point and around it the resist absorpbs a quantity of energy given by a Point Spread function (PSF). The extend area of this absoption depend on the electron range given by the interaction of the beam and the sample. If two dots are close enough each other then the resulting ebeam exposure will be a line or even a surface, that could lead to an unattended pattern.
+
+If you want you expose a simple surface it will be fine but if you want for instance expose two surfaces with a very small gap in between it could be a problem.
+
+This simulation can help you to determine the good dose (the dwelltime of the ebeam at each dot) for your desired pattern. You can visualize the result in 2D with matplotlib or 3D with openGL.
+
+Thanks to the free Casino3 software you can obtain the PSF with the depth of your resist, with any ebeam parameters and any sample and resist. Of course you have to know the parameters of your instrument (the semi-angle of the SEM, the speed of the electronique module, the physical proprieties of your sample, etc.)
+
+Once you get the PSF, this python notebook will help you to do the rest.
+
+You can explore more possibilies: you can mixte two exposures (one at low 5 kV for fast writing a large surface and one at high kV for fine structures). Or you can develop your own algo... and maybe share.
+
 # Requirement:
 - Some basic knowledges of python language and jupyter notebook
 - Windows 10 64 bits or Linux 64 bits
@@ -12,23 +26,23 @@ The simulation uses the Point Spread Function (PSF) simulated by free Casino3 so
 - A NVIDIA graphic card with at least 2 Go GPU-RAM (the more the better) and cuda capable, check your GPU CUDA-capable here: https://developer.nvidia.com/cuda-gpus
 
 If you have only an old computer and wanna up to 16 Tesla V100 GPU for some bucks you can use Amazon Web Services (aws). The instructions for launching an aws AMI are given in the aws folder.
-## Installation
+# Installation
 This work was tested on Windows 10, Ubuntu 18.04 on local and on aws EC2 p3.2xlarge. On linux system you can get more GPU RAM available than on Windows system (95 % instead of 81%).
-### Casino3
+## Casino3
 There are many way to obtain the PSF but the easiest way is using Monte Carlo simulation. You can get the PSF from the free software CASINO3 here:http://www.gel.usherbrooke.ca/casino/
 Unfortunatley Casino3 is a windows software but you can use Wine in Ubuntu to execute it.
-### CUDA toolkit and NVIDIA driver
+## CUDA toolkit and NVIDIA driver
 Download and install CUDA toolkit for your system here: https://developer.nvidia.com/cuda-downloads
 The CUDA toolkit file is packed with a display driver.
 Installation on Windows 10 is straight forward. In Ubuntu you may to blacklist the default 'nouveau' driver:
-#### Ubuntu 18.04
+### Ubuntu 18.04
 Hereafter are instructions for a fresh Ubuntu install and cudatoolkit version 10.1. Open a Terminal (ctrl+alt+t)
-##### 1) update your Ubuntu and install build-essential:
+#### 1) update your Ubuntu and install build-essential:
  - sudo apt update
  - sudo apt upgrade
  - sudo apt install build-essential
-##### 2) blacklist 'nouveau' driver:
-###### 2-a) create file in ~/ folder:
+#### 2) blacklist 'nouveau' driver:
+##### 2-a) create file in ~/ folder:
  - cd ~/
  - gedit blacklist-nouveau.conf
 ##### 2-b) add these two lines and save:
@@ -66,10 +80,11 @@ Hereafter are instructions for a fresh Ubuntu install and cudatoolkit version 10
  - run 'source ~/.bashrc'
  - run again: 'nvcc -V' if no error returned that's fine!
 
-### Anaconda
+## Anaconda
 You can download and install Anaconda for python 3.7 package here : https://www.anaconda.com/distribution/#download-section
 Again the installation in Windows is straight forward. In Ubuntu just run this command in a Terminal: 'bash Anaconda3-2019.03-Linux-x86_64.sh' and reboot.
-### Dependancies
+
+## Dependancies
 once Anaconda installed on you system, open a Terminal:
  - cd anaconda
  - anaconda-navigator
@@ -82,15 +97,3 @@ once Anaconda installed on you system, open a Terminal:
   right-click on the checkBox of 'numpy' and select 'Mark for specific version installation' then select the latest version (1.16.2 or newer)
 6) in anaconda-navigator, start a Terminal with your 'cudaenv' and enter 'pip install pycuda'
 7) install scikit-cuda with 'pip install scikit-cuda'
-# Introduction
-To write a pattern on a sample coated with a electron sensitive resist, the focused electron beam (ebeam)  (i.e. produced by a Scanning Electron Microscope (SEM)) impingles 'dot by dot' on the surface of the sample. The interaction physic is complex, at the impingled point and around it the resist absorpbs a quantity of energy given by a Point Spread function (PSF). The extend area of this absoption depend on the electron range given by the interaction of the beam and the sample. If two dots are close enough each other then the resulting ebeam exposure will be a line or even a surface, that could lead to an unattended pattern.
-
-If you want you expose a simple surface it will be fine but if you want for instance expose two surfaces with a very small gap in between it could be a problem.
-
-This simulation can help you to determine the good dose (the dwelltime of the ebeam at each dot) for your desired pattern. You can visualize the result in 2D with matplotlib or 3D with openGL.
-
-Thanks to the free Casino3 software you can obtain the PSF with the depth of your resist, with any ebeam parameters and any sample and resist. Of course you have to know the parameters of your instrument (the semi-angle of the SEM, the speed of the electronique module, the physical proprieties of your sample, etc.)
-
-Once you get the PSF, this python notebook will help you to do the rest.
-
-You can explore more possibilies: you can mixte two exposures (one at low 5 kV for fast writing a large surface and one at high kV for fine structures). Or you can develop your own algo... and maybe share.
