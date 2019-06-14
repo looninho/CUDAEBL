@@ -105,6 +105,7 @@ once Anaconda installed on you system, open a Terminal:
 - Some suggestions to overcome large data size when implement dose distribution into hardware
 - FFT on very large data (no limit)
 - Using aws with preinstalled AMI
+- Convert DXF file to point with QGIS
 
 # Contributing
 
