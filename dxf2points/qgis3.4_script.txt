@@ -1,0 +1,46 @@
+layer = iface.activeLayer()
+
+feats = [ feat for feat in layer.getFeatures()]
+
+points = []
+
+spacing_y = 50
+spacing_x = 50
+
+for feat in feats:
+    extent = feat.geometry().boundingBox()
+    xmin, ymin, xmax, ymax = extent.toRectF().getCoords()
+    rows = int(ymax - ymin)//spacing_y
+    cols = int(xmax - xmin)//spacing_x
+    x = xmin
+    y = ymax
+    geom_feat = feat.geometry()
+    for i in range(rows+1):
+        for j in range(cols+1):
+            tmp_pt = QgsGeometry.fromPointXY(QgsPointXY(x,y))
+            if tmp_pt.within(geom_feat):
+                points.append(tmp_pt.asPoint())
+            x += spacing_x
+        x = xmin
+        y -= spacing_y
+
+epsg = layer.crs().postgisSrid()
+
+#points
+uri = "Point?crs=epsg:" + str(epsg) + "&field=id:integer""&index=yes"
+
+mem_layer = QgsVectorLayer(uri,'point','memory')
+
+prov = mem_layer.dataProvider()
+
+feats = [ QgsFeature() for i in range(len(points)) ]
+
+for i, feat in enumerate(feats):
+    feat.setAttributes([i])
+    feat.setGeometry(QgsGeometry.fromPointXY(points[i]))
+
+prov.addFeatures(feats)
+
+QgsProject.instance().addMapLayer(mem_layer)
+
+QgsProject.instance().addMapLayer(mem_layer)
