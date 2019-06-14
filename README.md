@@ -97,3 +97,11 @@ once Anaconda installed on you system, open a Terminal:
   right-click on the checkBox of 'numpy' and select 'Mark for specific version installation' then select the latest version (1.16.2 or newer)
 6) in anaconda-navigator, start a Terminal with your 'cudaenv' and enter 'pip install pycuda'
 7) install scikit-cuda with 'pip install scikit-cuda'
+
+# TODO list
+- Calibration process using Raith dots pattern and ImageJ software
+- Some suggestions to get target exposure data (higher kV PSF, smoothing by convolution separate, etc.)
+- Some suggestions to eliminate negative doses
+- Some suggestions to overcome large data size when implement dose distribution into hardware
+- FFT on very large data (no limit)
+- Using aws with preinstalled AMI
