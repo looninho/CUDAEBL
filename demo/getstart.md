@@ -3,4 +3,4 @@ When you have installed all the prerequisites described previously, you can star
 
 Open the first demo and read the comments. 
 
-he cells are executed by pressing "Shift+Enter".
+The cells are executed by pressing "Shift+Enter".
