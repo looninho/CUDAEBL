@@ -94,7 +94,7 @@ Again the installation in Windows is straight forward. In Ubuntu just run this c
 once Anaconda installed on you system, open a Terminal:
  - cd anaconda
  - anaconda-navigator
-1) create a new environment 'cudaenv' with python 3.6 (python3.7 will be downgraded to 3.6 in the time when I write this line)
+1) create a new environment 'cudaenv' with python 3.6 (python3.7 will be downgraded to 3.6 at the time when I write this line)
 2) in the listBox select 'Not installed' and type 'numpy' in the searchBox then check the checkBox of 'numpy'.
 3) do the same as 2) for: scipy, matplotlib, ipython, jupyter, pandas, sympy, nose, pytest, cudatoolkit, pyculib, imageio, pyqtgraph, pyopengl
 4) apply and accept for download and installation. Then you can go out and play with your dog...
