@@ -10,6 +10,8 @@ The simulation uses the Point Spread Function (PSF) simulated by free Casino3 so
 <img src="phc3dimage.png" style="width:100%;"/>
 </center>
 
+The method is not new, it has been reported in the past but with 1D data array. However opensource code is still not available, here the author "reinvent" by using modern hardware to get ride of time consuming and very large data size. Note that unlimited data size method is "inspired" by astrophysical applications that extract very weak and noisy signal.
+
 # Introduction
 To write a pattern on a sample coated with a electron sensitive resist, the focused electron beam (ebeam)  (i.e. produced by a Scanning Electron Microscope (SEM)) impingles 'dot by dot' on the surface of the sample. The interaction physic is complex, at the impingled point and around it the resist absorbs a quantity of energy given by a Point Spread function (PSF). The extend area of this absoption depends on the electron range given by the interaction of the beam and the sample. If two dots are close enough each other then the resulting ebeam exposure will be a line or even a surface, that could lead to an unattended pattern.
 
